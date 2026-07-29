@@ -1,0 +1,16 @@
+[package]
+name = "sockrelay-loadtest"
+version = "0.1.0"
+edition = "2024"
+publish = false
+license = "MIT OR Apache-2.0"
+description = "Drives concurrent SSH_AGENTC_REQUEST_IDENTITIES requests against an ssh-agent-protocol endpoint (unix socket or Windows named pipe) and reports connect/request latency percentiles"
+
+[[bin]]
+name = "sockrelay-loadtest"
+path = "src/main.rs"
+
+[dependencies]
+tokio = { version = "1.53", features = ["full"] }
+clap = { version = "4.6.4", features = ["derive"] }
+thiserror = "2.0.19"
