@@ -39,3 +39,5 @@ cargo xwin build --release --target aarch64-pc-windows-msvc
 cargo test
 cargo clippy --all-targets
 ```
+
+CI runs both on every push and pull request, and daily on `main`, on Linux for amd64 and arm64.
