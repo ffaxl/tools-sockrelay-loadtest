@@ -96,7 +96,10 @@ impl<'a> Reader<'a> {
 
     fn u32(&mut self) -> Result<u32, ProtocolError> {
         let end = self.off.checked_add(4).ok_or(ProtocolError::Truncated)?;
-        let bytes = self.buf.get(self.off..end).ok_or(ProtocolError::Truncated)?;
+        let bytes = self
+            .buf
+            .get(self.off..end)
+            .ok_or(ProtocolError::Truncated)?;
         self.off = end;
         Ok(u32::from_be_bytes(bytes.try_into().unwrap()))
     }
@@ -104,7 +107,10 @@ impl<'a> Reader<'a> {
     fn str(&mut self) -> Result<&'a [u8], ProtocolError> {
         let n = self.u32()? as usize;
         let end = self.off.checked_add(n).ok_or(ProtocolError::Truncated)?;
-        let v = self.buf.get(self.off..end).ok_or(ProtocolError::Truncated)?;
+        let v = self
+            .buf
+            .get(self.off..end)
+            .ok_or(ProtocolError::Truncated)?;
         self.off = end;
         Ok(v)
     }
