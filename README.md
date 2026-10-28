@@ -2,11 +2,11 @@
 
 Drives concurrent `SSH_AGENTC_REQUEST_IDENTITIES` requests against an ssh-agent-protocol endpoint
 and reports connect/request latency percentiles — against a unix socket (e.g.
-[`sockrelay-client`](https://github.com/ffaxl/tools-sockrelay)'s own socket, the full relay path)
+[`sockrelay-client`](https://github.com/SvarogLab/sockrelay)'s own socket, the full relay path)
 or directly against a Windows named pipe (e.g. the real `\\.\pipe\openssh-ssh-agent`, to measure
 the raw agent's own ceiling with no relay in front of it).
 
-Originally built alongside [`sockrelay`](https://github.com/ffaxl/tools-sockrelay) to measure that
+Originally built alongside [`sockrelay`](https://github.com/SvarogLab/sockrelay) to measure that
 project's behavior under concurrent load; it has no dependency on any of that project's code, so it
 lives in its own repository rather than as a workspace member.
 
