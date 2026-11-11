@@ -11,6 +11,6 @@ name = "sockrelay-loadtest"
 path = "src/main.rs"
 
 [dependencies]
-tokio = { version = "1.53", features = ["full"] }
+tokio = { version = "1.54.1", features = ["full"] }
 clap = { version = "4.6.7", features = ["derive"] }
-thiserror = "2.0.19"
+thiserror = "2.0.21"
